@@ -6,7 +6,7 @@ $(function(){
     
          var $container = $(this),
              $list = $container.find("ul"),
-             $anchor = $container.find("a"),
+             $anchor = $container.find("label"),
              height = $list.height() * 1.1,       // make sure there is enough room at the bottom
              multiplier = height / maxHeight;     // needs to move faster if list is taller
         
@@ -21,6 +21,8 @@ $(function(){
             .show()
             .css({
                 paddingTop: $container.data("origHeight")
+
+                
             });
         
         // don't do any animation if list shorter than max
@@ -54,10 +56,6 @@ $(function(){
             .removeClass("hover");
     
     });
-    
-    // Add down arrow only to menu items with submenus
-
-    
     
 });
 
