@@ -16,6 +16,8 @@
      <!-- <link href = "datetime/jquery-ui-timepicker-addon.css" rel="stylesheet"> -->
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="./project2_files/d3.min.js" charset="utf-8"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+      <script type="text/javascript" language="javascript" src="../owen_v01/auto_dropdown_item.js"></script>
 
   </head>
 
@@ -36,7 +38,7 @@
           <!-- return all data -->
           <form method="post" id="myForm">
             <!-- building -->
-            <li class="no-padding">
+            <!-- <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
                 <li>
                   <a class="collapsible-header" id="building">Building<i class="mdi-navigation-arrow-drop-down"></i></a>
@@ -54,20 +56,29 @@
                         <input class="with-gap" name="bn" type="radio" id="test3" value="3">
                         <label for="test3">Three</label>
                       </li>
+                      <li ng-repeat="r in rooms">
+                        <li>
+                        <input class="with-gap" name="bn" type="radio" id="{{r.Num}}" value="{{r.Id}}">
+                        <label for="{{r.Num}}">{{r.Name}}</label>
+                      </li>
+                      </li>
                     </ul>
                   </div>
                 </li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- room -->
+          <div ng-app="MyApp" ng-controller="MyController"> 
+          
             <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
                 <li>
                   <a class="collapsible-header" id="room">Room<i class="mdi-navigation-arrow-drop-down"></i></a>
                   <div class="collapsible-body" style="">
+                      
                     <ul class="subGroup">
-                      <li>
+<!--                       <li>
                       <input class="with-gap" name="rn" type="radio" id="rn1" value="1">
                       <label for="rn1">One</label>
                       </li>
@@ -78,12 +89,20 @@
                       <li>
                         <input class="with-gap" name="rn" type="radio" id="rn3" value="3">
                         <label for="rn3">Three</label>
-                      </li>
-                    </ul>
-                  </div>
+                      </li> -->
+                                     
+                        <li ng-repeat="r in rooms">
+                        <input class="with-gap" name="rn" type="radio" id="{{r.Num}}" val="{{r.Id}}">
+                        <label for="{{r.Num}}">{{r.Name}}</label>
+                        </li>
+                  
+                      </ul>
+                    </div>
                 </li>
               </ul>
             </li>
+        
+          </div>
 
             <!-- Kinect  -->
             <li class="no-padding">

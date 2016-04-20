@@ -12,6 +12,8 @@ $('input[name=bn]').click(function() {
 });
 
 $('input[name=rn]').click(function() {
+  alert("test");
+  console.log($('#kinect').html());
   $('#room').html("Romm: #" + $('input[name=rn]:checked').val()+  "<i class='mdi-navigation-arrow-drop-down'></i>")
 });
 

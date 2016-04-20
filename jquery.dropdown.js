@@ -6,7 +6,7 @@ $(function(){
     
          var $container = $(this),
              $list = $container.find("ul"),
-             $anchor = $container.find("label"),
+             $anchor = $container.find("input"),
              height = $list.height() * 1.1,       // make sure there is enough room at the bottom
              multiplier = height / maxHeight;     // needs to move faster if list is taller
         
@@ -21,8 +21,6 @@ $(function(){
             .show()
             .css({
                 paddingTop: $container.data("origHeight")
-
-                
             });
         
         // don't do any animation if list shorter than max
